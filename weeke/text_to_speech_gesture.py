@@ -18,7 +18,7 @@ def text_to_speech_with_gesture():
     tts_engine = pyttsx3.init()
     speech = "hello this is a test yes or no"
 
-    # Split into words and trigger gestures as needed
+    #split into words and trigger appropriate gestures
     rospy.loginfo(f"Speaking: {speech}")
     for word in speech.split():
         if word.lower() == "hello":
