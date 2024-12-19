@@ -9,15 +9,15 @@ def repeat_speech():
     rospy.init_node("speech_repeater", anonymous=True)
     rospy.loginfo("Starting Speech-to-Speech Node")
 
-    # Vosk setup
-    model_path = "/path/to/your/vosk-model"
+    #setup vosk
+    model_path = "hri2024/src/hri_2024/weeke"
     model = Model(model_path)
     recognizer = KaldiRecognizer(model, 16000)
     audio = pyaudio.PyAudio()
     stream = audio.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8000)
     stream.start_stream()
 
-    # TTS setup
+    #setup TTS
     tts_engine = pyttsx3.init()
 
     rospy.loginfo("Listening for speech...")
